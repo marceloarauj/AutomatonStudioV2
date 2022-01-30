@@ -1,3 +1,4 @@
+import 'package:automaton_studio_v2/main_drawer.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -37,7 +38,8 @@ class _Home extends State<Home> {
       appBar: AppBar(
         title: Text('Init'),
       ),
-      body:  Text("Inicio")
+      body:  Text("Inicio"),
+      drawer: MainDrawer(),
     );
   }
 }
