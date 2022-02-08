@@ -1,4 +1,5 @@
 import 'package:automaton_studio_v2/main_drawer.dart';
+import 'package:automaton_studio_v2/screens/cubit_screen_manager.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,29 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         brightness: Brightness.dark
       ),
-      home: const Home()
-    );
-  }
-}
-
-class Home extends StatefulWidget {
-  const Home({Key? key}) : super(key: key);
-
-  @override
-  State<Home> createState() => _Home();
-}
-
-class _Home extends State<Home> {
-
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Init'),
-      ),
-      body:  Text("Inicio"),
-      drawer: MainDrawer(),
+      home: MainCubitManager()
     );
   }
 }

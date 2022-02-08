@@ -1,7 +1,10 @@
 import 'dart:io';
 
+import 'package:automaton_studio_v2/main.dart';
+import 'package:automaton_studio_v2/main_cubit_drawer.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class MainDrawer extends StatelessWidget {
   const MainDrawer({ Key? key }) : super(key: key);
@@ -30,42 +33,49 @@ class MainDrawer extends StatelessWidget {
 
     elements.add(
       _DrawerElement("Home", Key("Home"), Icons.home, null, ()=>{
+        context.read<ViewBloc>().navigateTo(InitState()),
         Navigator.of(context).pop()
       })
     );
 
     elements.add(
       _DrawerElement("New Project", Key("NewProject"), Icons.star_border_sharp, Colors.yellow, ()=>{
+        context.read<ViewBloc>().navigateTo(NewProjectState()),
         Navigator.of(context).pop()      
       })
     );
 
     elements.add(
       _DrawerElement("Load Project", Key("LoadProject"), Icons.folder_open_rounded,null, ()=>{
+        context.read<ViewBloc>().navigateTo(LoadProjectState()),
         Navigator.of(context).pop()
       })
     );
 
     elements.add(
       _DrawerElement("Import from Google Drive", Key("GDrive"), Icons.add_to_drive,null, ()=>{
+        context.read<ViewBloc>().navigateTo(ImportFromGoogleDriveState()),
         Navigator.of(context).pop()
       })
     );
 
     elements.add(
       _DrawerElement("Configurations", Key("Configurations"), Icons.settings,null, ()=>{
+        context.read<ViewBloc>().navigateTo(ConfigurationsState()),
         Navigator.of(context).pop()
       })
     );
 
     elements.add(
       _DrawerElement("Tutorials", Key("Tutorials"), Icons.help_outline_outlined,null, ()=>{
+        context.read<ViewBloc>().navigateTo(TutorialState()),
         Navigator.of(context).pop()
       })
     );
 
     elements.add(
       _DrawerElement("About", Key("About"), Icons.info_outlined, null, ()=>{
+        context.read<ViewBloc>().navigateTo(AboutState()),
         Navigator.of(context).pop()
       })
     );
