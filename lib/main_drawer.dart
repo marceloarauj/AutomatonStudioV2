@@ -1,7 +1,8 @@
 import 'dart:io';
 
+import 'package:automaton_studio_v2/cubics/language_cubic.dart';
 import 'package:automaton_studio_v2/main.dart';
-import 'package:automaton_studio_v2/main_cubit_drawer.dart';
+import 'package:automaton_studio_v2/cubics/main_drawer_cubic.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

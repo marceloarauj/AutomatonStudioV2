@@ -1,4 +1,5 @@
-import 'package:automaton_studio_v2/main_cubit_drawer.dart';
+import 'package:automaton_studio_v2/cubics/language_cubic.dart';
+import 'package:automaton_studio_v2/cubics/main_drawer_cubic.dart';
 import 'package:automaton_studio_v2/main_drawer.dart';
 import 'package:automaton_studio_v2/screens/About/about_view.dart';
 import 'package:automaton_studio_v2/screens/Configurations/configurations_view.dart';
@@ -34,6 +35,9 @@ class MainCubitManager extends StatelessWidget{
     return MultiBlocProvider(providers: [
       BlocProvider<ViewBloc>(
         create: (BuildContext context) => ViewBloc(),
+      ),
+      BlocProvider<LanguageBloc>(
+        create: (BuildContext context) => LanguageBloc()
       )
     ], 
     child: Scaffold(
