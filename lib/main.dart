@@ -16,7 +16,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        brightness: Brightness.dark
+        brightness: Brightness.dark,
+        fontFamily: 'Baloo',
       ),
       home: MainCubitManager()
     );
