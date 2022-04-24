@@ -14,6 +14,10 @@ class ConfigurationsLanguage extends Language {
   String get buttonColor => text({'pt-br': 'Cor do botão', 'en-us': 'Button color'});
   String get colorDialog => text({'pt-br': 'Selecione a cor', 'en-us': 'Select the color'});
   String get fontColor => text({'pt-br': 'Cor da fonte', 'en-us': 'Font color'});
+  String get transitionColor => text({'pt-br': 'Cor da transição', 'en-us': 'Transition color'});
+  String get stateColor => text({'pt-br': 'Cor do estado', 'en-us': 'State color'});
+  String get initialStateColor => text({'pt-br': 'Cor do estado inicial', 'en-us': 'Initial state color'});
+  String get finalStateColor => text({'pt-br': 'Cor do estado final', 'en-us': 'Final state color'});
 }
 
 class ConfigurationsView extends StatefulWidget {
@@ -57,21 +61,23 @@ class _ConfigurationsView extends State<ConfigurationsView> {
               Text(text.buttonColor + ": "),
               ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    primary: colorOption.buttonColor,
-                    onPrimary: colorOption.textColor
-                  ),
-                  onPressed: () => colorDialog(text.colorDialog, setButtonColor),
+                      primary: colorOption.buttonColor),
+                  onPressed: () =>
+                      colorDialog(text.colorDialog, setButtonColor),
                   child: Text(text.buttonColor))
             ]),
             Row(children: [
               Text(text.fontColor + ": "),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    primary: colorOption.buttonColor,
-                    onPrimary: colorOption.textColor
-                  ),
+              OutlinedButton(
                   onPressed: () => colorDialog(text.colorDialog, setFontColor),
-                  child: Text(text.fontColor))
+                  child: Text(text.fontColor,
+                      style: TextStyle(color: colorOption.textColor)))
+            ]),
+            Row(children: [
+              Text(text.transitionColor + ": "),
+              OutlinedButton(
+                  onPressed: () => colorDialog(text.colorDialog, setTransitionColor),
+                  child: Icon(Icons.arrow_right_alt, size: 40, color: colorOption.transitionColor))
             ])
           ],
         ));
@@ -96,12 +102,21 @@ class _ConfigurationsView extends State<ConfigurationsView> {
   setButtonColor(Color color) {
     setState(() {
       colorOption.buttonColor = color;
+      colorOption.buttonHexColor = color.value.toRadixString(16);
     });
   }
 
   setFontColor(Color color) {
     setState(() {
       colorOption.textColor = color;
+      colorOption.textHexColor = color.value.toRadixString(16);
+    });
+  }
+
+  setTransitionColor(Color color) {
+    setState(() {
+      colorOption.transitionColor = color;
+      colorOption.transitionHexColor = color.value.toRadixString(16);
     });
   }
 

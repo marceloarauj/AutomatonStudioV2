@@ -10,7 +10,7 @@ class ColorOption{
   late String menuItemHexColor;
 
   Color buttonColor = Colors.blue;
-  late Color transitionColor;
+  late Color transitionColor = Colors.purple;
   Color textColor = Colors.white;
   late Color menuItemColor;
 }
